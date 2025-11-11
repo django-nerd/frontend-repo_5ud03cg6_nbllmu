@@ -50,4 +50,33 @@
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
   }
+
+  /* Moving lines background for stack section */
+  .moving-lines {
+    background: linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+    background-size: 60px 60px, 60px 60px;
+    background-position: 0 0, 0 0;
+    mask-image: radial-gradient(circle at center, black 30%, transparent 80%);
+    animation: grid-move 18s linear infinite;
+  }
+
+  @keyframes grid-move {
+    0% { background-position: 0 0, 0 0; }
+    100% { background-position: 120px 120px, -120px -120px; }
+  }
+
+  /* subtle spins and orbits for planet */
+  .spin-slow { animation: spin 16s linear infinite; }
+  .spin-slower { animation: spin 28s linear infinite; }
+  .orbit { animation: orbit 8s linear infinite; transform-origin: center 120%; }
+  .orbit-slow { animation: orbit 14s linear infinite; transform-origin: center 150%; }
+
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+  @keyframes orbit {
+    0% { transform: rotate(0deg) translateY(0); }
+    100% { transform: rotate(360deg) translateY(0); }
+  }
 }

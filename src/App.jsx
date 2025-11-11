@@ -1,6 +1,5 @@
 import { useMemo } from 'react'
-import Spline from '@splinetool/react-spline'
-import { Github, Linkedin, Mail, Sparkles, Cpu, Code2, Rocket, Database, Shield } from 'lucide-react'
+import { Github, Linkedin, Mail, Cpu, Code2, Rocket, Database, Shield } from 'lucide-react'
 
 function Nav() {
   return (
@@ -12,7 +11,6 @@ function Nav() {
           </span>
         </a>
         <div className="flex items-center gap-4 text-sm">
-          <a href="#about" className="text-white/70 hover:text-white transition-colors">About</a>
           <a href="#stack" className="text-white/70 hover:text-white transition-colors">Stack</a>
           <a href="#contact" className="text-white/70 hover:text-white transition-colors">Contact</a>
           <div className="w-px h-5 bg-white/10 mx-1" />
@@ -27,81 +25,51 @@ function Nav() {
   )
 }
 
-function Hero() {
+function TechPlanet() {
   return (
-    <section className="relative h-[90vh] w-full overflow-hidden">
-      <div className="absolute inset-0">
-        <Spline scene="https://prod.spline.design/xW-uaUprkPUPPfRw/scene.splinecode" style={{ width: '100%', height: '100%' }} />
-      </div>
-
-      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/40 to-[#0a0f1b] pointer-events-none" />
-
-      <div className="relative z-10 max-w-6xl mx-auto px-6 h-full flex items-center">
-        <div className="max-w-2xl">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/10 text-white/80 backdrop-blur">
-            <Sparkles size={16} className="text-purple-300" />
-            <span className="text-xs">Futuristic • Next‑Gen • Tech Forward</span>
-          </div>
-
-          <h1 className="mt-5 text-4xl sm:text-6xl font-extrabold leading-tight">
-            <span className="text-gradient">Building sleek digital experiences</span>
-            <br />
-            <span className="text-white/80">with code, design, and curiosity.</span>
-          </h1>
-
-          <p className="mt-5 text-white/70 text-lg">
-            I craft high‑performance web apps with modern stacks, clean architecture, and an obsessive focus on detail.
-          </p>
-
-          <div className="mt-8 flex flex-wrap items-center gap-3">
-            <a href="#contact" className="px-5 py-2.5 rounded-lg bg-gradient-to-r from-purple-600 to-blue-600 text-white font-medium shadow-[0_0_20px_rgba(88,28,135,0.35)] hover:shadow-[0_0_30px_rgba(37,99,235,0.45)] transition-shadow">
-              Get in touch
-            </a>
-            <a href="#stack" className="px-5 py-2.5 rounded-lg bg-white/10 hover:bg-white/15 border border-white/10 text-white/90 font-medium backdrop-blur transition-colors">
-              Explore my stack
-            </a>
-          </div>
+    <div className="relative w-full max-w-sm aspect-square mx-auto">
+      {/* Glow */}
+      <div className="absolute inset-0 rounded-full blur-3xl bg-gradient-to-tr from-purple-600/40 via-fuchsia-500/30 to-blue-600/40" />
+      {/* Planet */}
+      <div className="relative w-full h-full rounded-full bg-[radial-gradient(circle_at_30%_30%,#a78bfa_0%,#6d28d9_35%,#1d4ed8_70%,#0b1222_85%)] shadow-[inset_0_40px_80px_rgba(255,255,255,0.05)] border border-white/10 overflow-visible">
+        {/* Rings */}
+        <div className="absolute inset-0 rounded-full border border-white/10 -rotate-12 spin-slow" />
+        <div className="absolute inset-0 rounded-full border border-blue-300/20 rotate-12 spin-slower" />
+        {/* Orbits */}
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] rounded-full border border-purple-300/20">
+          <span className="absolute left-1/2 top-0 -translate-x-1/2 w-2 h-2 rounded-full bg-purple-300 shadow-[0_0_12px_3px_rgba(167,139,250,0.6)] orbit" />
+        </div>
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] rounded-full border border-blue-300/15">
+          <span className="absolute left-1/2 top-0 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-blue-300 shadow-[0_0_10px_2px_rgba(96,165,250,0.6)] orbit-slow" />
         </div>
       </div>
-
-      <Waves />
-    </section>
+    </div>
   )
 }
 
-function Waves() {
+function Hero() {
   return (
-    <div className="absolute bottom-0 left-0 right-0 z-10">
-      <div className="relative h-28 overflow-hidden">
-        <svg className="absolute bottom-0 left-0 w-[200%] h-28 animate-wave-slow" viewBox="0 0 1200 120" preserveAspectRatio="none">
-          <path d="M0 67 C 273,183 822,-40 1200,52 L1200 120 L0 120 Z" fill="url(#grad1)" fillOpacity="0.22" />
-          <defs>
-            <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="#7C3AED" />
-              <stop offset="100%" stopColor="#2563EB" />
-            </linearGradient>
-          </defs>
-        </svg>
-        <svg className="absolute bottom-0 left-0 w-[200%] h-28 animate-wave" viewBox="0 0 1200 120" preserveAspectRatio="none">
-          <path d="M0 67 C 273,183 822,-40 1200,52 L1200 120 L0 120 Z" fill="url(#grad2)" fillOpacity="0.35" />
-          <defs>
-            <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="#8B5CF6" />
-              <stop offset="100%" stopColor="#3B82F6" />
-            </linearGradient>
-          </defs>
-        </svg>
-        <svg className="absolute bottom-0 left-0 w-[200%] h-28 animate-wave-fast" viewBox="0 0 1200 120" preserveAspectRatio="none">
-          <path d="M0 67 C 273,183 822,-40 1200,52 L1200 120 L0 120 Z" fill="url(#grad3)" fillOpacity="0.6" />
-          <defs>
-            <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="#A78BFA" />
-              <stop offset="100%" stopColor="#60A5FA" />
-            </linearGradient>
-          </defs>
-        </svg>
+    <section className="relative pt-28 pb-10 sm:pt-32 sm:pb-16 bg-[#0a0f1b] overflow-hidden">
+      <div className="absolute inset-0 bg-[radial-gradient(1200px_600px_at_-10%_-20%,rgba(124,58,237,0.25),transparent_60%)]" />
+      <div className="relative z-10 max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
+        {/* Left: Name minimal */}
+        <div>
+          <h1 className="text-5xl sm:text-7xl font-extrabold leading-none">
+            <span className="text-gradient">YOUR NAME</span>
+          </h1>
+          <div className="mt-5 flex flex-wrap gap-2 text-sm">
+            <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-white/70">Web</span>
+            <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-white/70">React</span>
+            <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-white/70">FastAPI</span>
+            <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-white/70">Design</span>
+          </div>
+        </div>
+        {/* Right: Tech Planet */}
+        <div className="md:justify-self-end">
+          <TechPlanet />
+        </div>
       </div>
-    </div>
+    </section>
   )
 }
 
@@ -124,24 +92,22 @@ function GlassCard({ icon: Icon, title, children }) {
 
 function Stack() {
   const items = useMemo(() => ([
-    { icon: Code2, title: 'Frontend', text: 'React, Vite, Tailwind, Framer Motion — responsive, accessible, and blazing fast.' },
-    { icon: Database, title: 'APIs & Data', text: 'FastAPI, MongoDB, REST patterns, secure auth, clean data models.' },
-    { icon: Cpu, title: 'Performance', text: 'Lighthouse‑friendly, lazy loading, image optimization, bundle hygiene.' },
-    { icon: Shield, title: 'Quality', text: 'Type hints, schema validation, sensible error handling, observability.' },
-    { icon: Rocket, title: 'Delivery', text: 'CI‑ready, modular architecture, scalable components, future‑proof.' },
+    { icon: Code2, title: 'Frontend', text: 'React, Vite, Tailwind, Framer Motion.' },
+    { icon: Database, title: 'APIs & Data', text: 'FastAPI, MongoDB, REST.' },
+    { icon: Cpu, title: 'Performance', text: 'Fast, accessible, sleek.' },
+    { icon: Shield, title: 'Quality', text: 'Typed, validated, tested.' },
+    { icon: Rocket, title: 'Delivery', text: 'Modular and scalable.' },
   ]), [])
 
   return (
-    <section id="stack" className="relative py-20 bg-[#0a0f1b]">
+    <section id="stack" className="relative py-20 bg-[#0a0f1b] overflow-hidden">
+      {/* Moving lines background */}
+      <div className="absolute inset-0 moving-lines opacity-40" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(124,58,237,0.15),transparent_60%)]" />
       <div className="relative max-w-6xl mx-auto px-6">
         <h2 className="text-3xl sm:text-4xl font-bold">
-          <span className="text-gradient">Tech that powers my builds</span>
+          <span className="text-gradient">Tech Stack</span>
         </h2>
-        <p className="mt-3 text-white/70 max-w-2xl">
-          A carefully‑curated toolkit engineered for reliability and speed.
-        </p>
-
         <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {items.map((item, i) => (
             <GlassCard key={i} icon={item.icon} title={item.title}>{item.text}</GlassCard>
@@ -157,8 +123,8 @@ function Footer() {
     <footer id="contact" className="relative bg-[#090d17] border-t border-white/10">
       <div className="max-w-6xl mx-auto px-6 py-10 flex flex-col sm:flex-row items-center justify-between gap-6">
         <div>
-          <p className="text-white/80 font-medium">Let’s build something remarkable.</p>
-          <p className="text-white/50 text-sm">Drop a line and I’ll get back within 24h.</p>
+          <p className="text-white/80 font-medium">Say hi</p>
+          <p className="text-white/50 text-sm">I read every message.</p>
         </div>
         <div className="flex items-center gap-3">
           <a href="mailto:you@example.com" className="px-4 py-2 rounded-lg bg-white/10 hover:bg-white/15 border border-white/10 text-white/90 transition-colors">you@example.com</a>
